@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiggabyte Technology Limited | Coming Soon</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1a2f5e;
+      --navy-deep:  #0f1e3d;
+      --navy-mid:   #243a72;
+      --accent:     #2d4f9e;
+      --white:      #ffffff;
+      --off-white:  #f0f3f9;
+      --muted:      rgba(255,255,255,0.55);
+      --border:     rgba(255,255,255,0.12);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy-deep);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 20%, #2d4f9e55 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 10% 80%, #1a2f5e88 0%, transparent 55%),
+                  linear-gradient(160deg, #0f1e3d 0%, #1a2f5e 50%, #0d1a38 100%);
+    }
+    .grid-lines {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .glow-orb {
+      position: fixed; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none;
+    }
+    .glow-orb.one   { width: 500px; height: 500px; background: rgba(45,79,158,0.3);  top: -100px; right: -100px; animation: drift 12s ease-in-out infinite alternate; }
+    .glow-orb.two   { width: 350px; height: 350px; background: rgba(26,47,94,0.4);   bottom: -80px; left: -80px; animation: drift 15s ease-in-out infinite alternate-reverse; }
+    .glow-orb.three { width: 200px; height: 200px; background: rgba(45,79,158,0.25); top: 50%; left: 40%; animation: drift 9s ease-in-out infinite alternate; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(30px, 20px) scale(1.08); }
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 1fr;
+      padding: 40px clamp(24px, 6vw, 80px);
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.8s ease both;
+    }
+    .logo-wrap {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .logo-icon {
+      width: auto; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    /* Full logo SVG */
+    .logo-icon svg { height: 52px; width: auto; }
+    .nav-badge {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 40px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ── MAIN ── */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(48px, 8vh, 100px) 0;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+      display: flex; align-items: center; gap: 12px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 9vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 12px;
+      animation: fadeUp 0.8s 0.35s ease both;
+    }
+    h1 .line2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+    }
+
+    .tagline {
+      font-size: clamp(14px, 2vw, 17px);
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 32px 0 52px;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    /* ── SERVICES STRIP ── */
+    .services-strip {
+      animation: fadeUp 0.8s 0.95s ease both;
+      padding: 40px 0 0;
+      border-top: 1px solid var(--border);
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .service-pill {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 7px 16px;
+      transition: color 0.25s, border-color 0.25s, background 0.25s;
+      cursor: default;
+    }
+    .service-pill:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      animation: fadeDown 0.8s 1.1s ease both;
+    }
+    .footer-left {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+    .footer-left a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-left a:hover { color: var(--white); }
+    .social-links {
+      display: flex; gap: 14px;
+    }
+    .social-links a {
+      width: 34px; height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 13px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .social-links a:hover {
+      border-color: rgba(255,255,255,0.4);
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── DECORATIVE RIGHT PANEL ── */
+    .deco-panel {
+      position: fixed;
+      right: clamp(24px, 5vw, 60px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+      z-index: 1;
+      animation: fadeLeft 1s 1.2s ease both;
+    }
+    @media (max-width: 900px) { .deco-panel { display: none; } }
+    .deco-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15));
+    }
+    .deco-line:nth-child(1) { width: 120px; }
+    .deco-line:nth-child(2) { width: 80px; }
+    .deco-line:nth-child(3) { width: 150px; }
+    .deco-line:nth-child(4) { width: 60px; }
+    .deco-line:nth-child(5) { width: 100px; }
+    .deco-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+    .deco-dot.active { background: rgba(255,255,255,0.6); }
+    .deco-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      writing-mode: vertical-rl;
+      margin-top: 24px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateY(-50%) translateX(20px); }
+      to   { opacity: 1; transform: translateY(-50%) translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+  <div class="grid-lines"></div>
+  <div class="glow-orb one"></div>
+  <div class="glow-orb two"></div>
+  <div class="glow-orb three"></div>
+
+  <!-- Decorative right panel -->
+  <div class="deco-panel">
+    <div class="deco-line"></div>
+    <div class="deco-dot active"></div>
+    <div class="deco-line"></div>
+    <div class="deco-dot"></div>
+    <div class="deco-line"></div>
+    <div class="deco-dot"></div>
+    <div class="deco-line"></div>
+    <div class="deco-dot"></div>
+    <div class="deco-line"></div>
+    <div class="deco-label">Jiggabyte 2026</div>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo-wrap">
+        <!-- Logo -->
+        <div class="logo-icon">
+          <img src="logo_light.svg" alt="Jiggabyte Technology Limited" style="height: 52px; width: auto;">
+        </div>
+      </div>
+      <div class="nav-badge">Coming Soon</div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class="eyebrow">Something big is coming</div>
+
+      <h1>
+        We're Building<br>
+        <span class="line2">The Future.</span>
+      </h1>
+
+      <p class="tagline">
+        Jiggabyte Technology Limited is crafting intelligent digital solutions — AI systems, automation tools, and tailor-made software — to empower businesses across Zambia and Africa.
+      </p>
+
+      <!-- SERVICES STRIP -->
+      <div class="services-strip">
+        <div class="service-pill">AI Chatbot Solutions</div>
+        <div class="service-pill">Web Development</div>
+        <div class="service-pill">Software Development</div>
+        <div class="service-pill">Automation & Design</div>
+        <div class="service-pill">IT Consultancy</div>
+      </div>
+    </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      &copy; 2026 Jiggabyte Technology Limited , 
+      <a href="mailto:info@jiggabyte.co.zm">info@jiggabyte.co.zm</a> , 
+      <a href="tel:+260570326775">+260 570 326 775</a>
+    </div>
+    <div class="social-links">
+      <!-- Facebook -->
+      <a href="#" title="Facebook">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <!-- Twitter/X -->
+      <a href="#" title="Twitter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="#" title="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
