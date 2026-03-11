@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 
 <body>
@@ -61,14 +61,8 @@
                     <a href="#contact" class="btn btn-primary btn-large">Book a Free Consultation</a>
                 </div>
                 <div class="hero-visual">
-                    <div class="cube-composition">
-                        <div class="cube main-cube glass-card floating">
-                            <div class="cube-icon">AI</div>
-                        </div>
-                        <div class="cube sub-cube-1 floating-delay-1"></div>
-                        <div class="cube sub-cube-2 floating-delay-2"></div>
-                        <div class="cube sub-cube-3 grid-pattern"></div>
-                    </div>
+                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.68/build/spline-viewer.js"></script>
+                    <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/daVVhLBp3wRXVCno/scene.splinecode"></spline-viewer>
                 </div>
             </div>
         </section>
@@ -213,25 +207,25 @@
                 </div>
 
                 <div class="projects-grid">
-                    <div class="project-card glass-card">
+                    <div class="project-card glass-card" data-project="mfz-chatbot">
                         <div class="project-image">
-                            <img src="assets/images/ai_dashboard_project_1772887083824.png"
-                                alt="AI Analytics Dashboard">
+                            <img src="assets/images/mfz-ai-chatbot.png" alt="MFZ AI Chatbot">
                         </div>
                         <div class="project-content">
-                            <h3>Predictive Analytics Dashboard</h3>
-                            <p>A scalable, real-time analytics module for tracking enterprise logistics.</p>
+                            <h3>MFZ AI Chatbot</h3>
+                            <p>24/7 WhatsApp & webchat assistant with automated lead routing and RAG-powered support for MFZ Zambia.</p>
+                            <button class="btn btn-small btn-outline project-details-btn">View Details</button>
                         </div>
                     </div>
 
-                    <div class="project-card glass-card">
+                    <div class="project-card glass-card" data-project="auditflow">
                         <div class="project-image">
-                            <img src="assets/images/automation_workflow_project_1772887124616.png"
-                                alt="Automation Workflow Tool">
+                            <img src="assets/images/auditflow-suite.jpg" alt="AuditFlow Toolkit">
                         </div>
                         <div class="project-content">
-                            <h3>Intelligent Operations System</h3>
-                            <p>Node-based visual automation platform reducing manual QA by 80%.</p>
+                            <h3>AuditFlow Toolkit</h3>
+                            <p>8-tool suite automating UIF COVID TERS audits, cutting cycle times by 75% and saving 50+ hours weekly.</p>
+                            <button class="btn btn-small btn-outline project-details-btn">View Details</button>
                         </div>
                     </div>
                 </div>
@@ -247,29 +241,25 @@
 
                 <div class="testimonials-grid">
                     <div class="testimonial-card glass-card">
-                        <p class="testimonial-text">"Jiggabyte completely transformed our operations. Their AI analytics
-                            dashboard provided us with insights we didn't even know we were missing. Highly scalable and
-                            extremely professional."</p>
+                        <p class="testimonial-text">"Our UIF COVID TERS audits used to eat up days of manual work chasing documents, compiling reports, tracking emails by hand. AuditFlow cut through all of that. We're getting through work in a fraction of the time and I'm not constantly worrying about compliance gaps anymore. It's made a real difference for my team."</p>
                         <div class="testimonial-author">
-                            <img src="assets/images/testimonial_avatar_1_1772887178845.png" alt="Client Avatar"
+                            <img src="assets/images/audit-avatar.png" alt="Mmatsiana Makgoba"
                                 class="author-avatar">
                             <div>
-                                <h4>Kwame Osei</h4>
-                                <span>Operations Director, FinTech Africa</span>
+                                <h4>Mmatsiana Makgoba</h4>
+                                <span>Project Manager</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="testimonial-card glass-card">
-                        <p class="testimonial-text">"The custom automation workflows they built for us reduced our
-                            team's manual data entry by 80%. They are indeed building the future of African technology."
-                        </p>
+                        <p class="testimonial-text">"We used to have one person handling every WhatsApp inquiry that came into head office - leads, questions, branch requests, all of it. After hours, customers just got nothing. The chatbot handles all of that now. It picks up every message, gets customers to the right branch, and passes qualified leads straight to the right loan officer. We stopped losing people just because nobody was available to respond."</p>
                         <div class="testimonial-author">
-                            <img src="assets/images/testimonial_avatar_2_1772887214140.png" alt="Client Avatar"
+                            <img src="assets/images/mfz-logo.png" alt="Joshua Zulu"
                                 class="author-avatar">
                             <div>
-                                <h4>Amina Bello</h4>
-                                <span>CEO, AgriTech Solutions</span>
+                                <h4>Joshua Zulu</h4>
+                                <span>MFZ Staff</span>
                             </div>
                         </div>
                     </div>
@@ -368,6 +358,128 @@
             </div>
         </section>
     </main>
+
+    <!-- Project Detail Modals -->
+    <div id="project-modal" class="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close modal">
+                <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+            </button>
+            
+            <!-- MFZ Chatbot Content -->
+            <div class="modal-content" id="mfz-chatbot-content" style="display: none;">
+                <div class="modal-header">
+                    <span class="modal-tag">AI Chatbot</span>
+                    <h2>MFZ AI Chatbot: Automated Lead Routing & Support System</h2>
+                    <p class="modal-subtitle">24/7 intelligent WhatsApp & webchat assistant built on Botpress that automates lead qualification, geographic branch routing, and fair loan officer assignment while answering customer queries from a verified RAG knowledge base.</p>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/mfz-ai-chatbot.png" alt="MFZ AI Chatbot" class="modal-image">
+                    
+                    <div class="modal-section">
+                        <h3>Overview</h3>
+                        <p>Replaced MFZ Zambia's manual head-office WhatsApp operator with an automated, always-on system that can qualify leads, provide accurate answers from verified MFZ policies, and route customers to the right branch or loan officer without human bottlenecks.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Development Approach</h3>
+                        <ul class="arrow-list">
+                            <li>Designed the conversation and decision flows in Botpress to capture user intent, collect key lead information, and guide customers through province and branch selection.</li>
+                            <li>Implemented a Retrieval-Augmented Generation (RAG) layer using a curated MFZ knowledge base so the bot only answers from verified internal policies and documentation.</li>
+                            <li>Modeled provinces, branches, loan officers, and assignment counters in Botpress Tables to support geographic routing and stateful distribution.</li>
+                            <li>Built a fair load-balancing algorithm that assigns new loan leads to the officer at the selected branch with the lowest current assignment count (round-robin style).</li>
+                            <li>Configured WhatsApp Cloud API and webchat channels so the bot can operate seamlessly on both mobile and web entry points.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Challenges & Solutions</h3>
+                        <div class="challenge-solution">
+                            <p class="challenge"><strong>Challenge:</strong> Ensuring the bot stayed compliant and did not share sensitive financial terms like interest rates or repayment amounts.</p>
+                            <p class="solution"><strong>Solution:</strong> Constrained the bot's responses to a verified MFZ knowledge base and explicitly restricted it from answering detailed pricing questions, instead handing off those topics to the assigned human loan officer.</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <p class="challenge"><strong>Challenge:</strong> Distributing leads fairly across many loan officers while respecting geography and avoiding overload.</p>
+                            <p class="solution"><strong>Solution:</strong> Implemented a stateful assignment counter per officer in Botpress Tables and built logic to always route new leads to the officer with the lowest current assignment at the selected branch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Outcomes</h3>
+                        <ul class="arrow-list">
+                            <li>Eliminated the single-operator bottleneck at MFZ head office by automating lead capture, qualification, and routing.</li>
+                            <li>Captured every after-hours lead via 24/7 availability, reducing the risk of losing customers to competitors due to delayed responses.</li>
+                            <li>Provided standardized, accurate responses for all customers based on MFZ's verified policies and service descriptions.</li>
+                            <li>Gave management better visibility into traffic, product interest, and branch/loan officer load patterns via chatbot interaction data.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AuditFlow Content -->
+            <div class="modal-content" id="auditflow-content" style="display: none;">
+                <div class="modal-header">
+                    <span class="modal-tag">Audit Automation</span>
+                    <h2>AuditFlow - Complete Audit Toolkit Suite</h2>
+                    <p class="modal-subtitle">A comprehensive suite of 8 specialized tools to streamline and automate end-to-end UIF COVID TERS audit workflows, cutting cycle times by up to 75%.</p>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/auditflow-suite.jpg" alt="AuditFlow Toolkit" class="modal-image">
+                    
+                    <div class="modal-section">
+                        <h3>Overview</h3>
+                        <p>Existing audit workflows, particularly for UIF COVID TERS, were slow, manually intensive, and error-prone. The suite was built to eliminate manual bottlenecks, improve reliability, and ensure full regulatory compliance for complex audit processes.</p>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Development Approach</h3>
+                        <ul class="arrow-list">
+                            <li>Developed 8 specialized tools to cover all aspects of the audit workflow, including communication (Email/Calls tracking), documentation (Working Papers/Reports), and analytics.</li>
+                            <li>Utilized Python and Streamlit to build robust data processing pipelines and interactive UI/dashboards, such as the Audit Report Generator.</li>
+                            <li>Implemented automated processes for data consolidation (Weekly Register Populator) and file handling (File Finder & Copier).</li>
+                            <li>Integrated IMAP sync and SQLite metrics for real-time tracking of email volumes and performance.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Challenges & Solutions</h3>
+                        <div class="challenge-solution">
+                            <p class="challenge"><strong>Challenge:</strong> Integrating multiple distinct audit steps into a seamless workflow.</p>
+                            <p class="solution"><strong>Solution:</strong> Designed an integrated suite of 8 tools (Working Paper Generator, Email Tracker, etc.) that work together for complete workflow coverage.</p>
+                        </div>
+                        <div class="challenge-solution">
+                            <p class="challenge"><strong>Challenge:</strong> Achieving high-speed processing for complex, multi-source audit data.</p>
+                            <p class="solution"><strong>Solution:</strong> Built tools to process workflows 10x faster and reduce audit cycle times by using efficient, automated methods.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>Outcomes</h3>
+                        <ul class="arrow-list">
+                            <li>Reduced audit cycle times and manual effort by up to 75%.</li>
+                            <li>Achieved an estimated saving of 50+ hours per week for audit teams.</li>
+                            <li>Improved report quality and ensured 100% compliance with built-in checks and audit trails.</li>
+                        </ul>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">75%</span>
+                                <span class="stat-label">Reduction in audit cycle time</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">99%</span>
+                                <span class="stat-label">Accuracy rate</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Hours saved per week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer style="padding: 4rem 0 2rem; background: var(--primary);">
         <div class="container footer-content"

@@ -82,4 +82,68 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
+
+    // 6. Project Modal Functionality
+    const projectModal = document.getElementById('project-modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const modalClose = document.querySelector('.modal-close');
+    const projectButtons = document.querySelectorAll('.project-details-btn');
+    const mfzContent = document.getElementById('mfz-chatbot-content');
+    const auditflowContent = document.getElementById('auditflow-content');
+
+    function openModal(projectType) {
+        // Hide all content first
+        mfzContent.style.display = 'none';
+        auditflowContent.style.display = 'none';
+        
+        // Show appropriate content
+        if (projectType === 'mfz-chatbot') {
+            mfzContent.style.display = 'block';
+        } else if (projectType === 'auditflow') {
+            auditflowContent.style.display = 'block';
+        }
+        
+        // Show modal
+        projectModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        
+        // Re-initialize icons in modal
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    function closeModal() {
+        projectModal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+    }
+
+    // Attach click handlers to project detail buttons
+    projectButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const projectCard = btn.closest('.project-card');
+            console.log('Project card found:', projectCard);
+            console.log('Dataset:', projectCard ? projectCard.dataset : 'N/A');
+            const projectType = projectCard ? projectCard.dataset.project : null;
+            console.log('Project type:', projectType);
+            if (projectType) {
+                openModal(projectType);
+            }
+        });
+    });
+
+    // Close modal on overlay click
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close modal on close button click
+    modalClose.addEventListener('click', closeModal);
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
