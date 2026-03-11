@@ -1299,6 +1299,10 @@ footer {
         text-align: center;
         align-items: center;
     }
+
+    .footer-brand {
+        align-items: center !important;
+    }
 }
 
 .footer-logo {

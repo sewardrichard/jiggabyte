@@ -59,22 +59,66 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(element);
     });
 
-    // 4. Contact Form Submission PreventDefault (for demo purposes)
+    // 4. Contact Form Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
             const btn = contactForm.querySelector('button');
             const originalText = btn.textContent;
-
-            btn.textContent = 'Message Sent!';
-            btn.style.backgroundColor = 'var(--accent)';
-
-            setTimeout(() => {
-                contactForm.reset();
-                btn.textContent = originalText;
-                btn.style.backgroundColor = '';
-            }, 3000);
+            const formData = new FormData(contactForm);
+            
+            // Show loading state
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            try {
+                const response = await fetch('contact-handler.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Success
+                    btn.textContent = 'Message Sent!';
+                    btn.style.backgroundColor = 'var(--accent)';
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 3000);
+                } else {
+                    // Error
+                    btn.textContent = 'Error - Try Again';
+                    btn.style.backgroundColor = '#ef4444';
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 3000);
+                    
+                    // Optional: Show error message
+                    console.error('Form submission error:', result.message);
+                }
+            } catch (error) {
+                // Network error
+                btn.textContent = 'Error - Try Again';
+                btn.style.backgroundColor = '#ef4444';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.disabled = false;
+                }, 3000);
+                
+                console.error('Network error:', error);
+            }
         });
     }
 
