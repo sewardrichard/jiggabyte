@@ -1038,7 +1038,7 @@ section {
 
 .contact-label {
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: bold;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1047,7 +1047,7 @@ section {
 .contact-item a,
 .contact-item address {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 300;
     color: var(--dark-bg);
 }
 

@@ -1,5 +1,4 @@
 <?php
-<?php
 // Configuration
 $to = 'info@jiggabyte.co.zm';
 $subject = 'New Contact Form Submission from Jiggabyte Website';
