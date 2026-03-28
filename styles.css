@@ -54,14 +54,15 @@
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
-
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; width: 100%; }
 body {
     font-family: var(--font-body);
     color: var(--text-dark);
     background-color: var(--canvas);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Subtle dot-grid texture over entire canvas */
@@ -180,6 +181,7 @@ section {
     background: transparent;
     color: var(--text-dark);
     position: relative;
+    overflow: hidden;
 }
 
 /* The only "dark-section" behaviour we keep is the dot-grid overlay */
@@ -613,7 +615,7 @@ section {
 /* ==========================================================================
    PROJECTS
    ========================================================================== */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2.5rem; margin-top: 1.5rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 2.5rem; margin-top: 1.5rem; }
 
 .project-card {
     overflow: hidden; display: flex; flex-direction: column;
@@ -645,7 +647,7 @@ section {
 /* ==========================================================================
    TESTIMONIALS
    ========================================================================== */
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; }
 
 .testimonial-card { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
 
@@ -659,7 +661,7 @@ section {
 .author-avatar {
     width: 44px; height: 44px; border-radius: 50%;
     object-fit: contain; border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05); padding: 4px;
+    background: #ffffff; padding: 4px;
     box-sizing: border-box; flex-shrink: 0;
 }
 
@@ -927,7 +929,7 @@ footer {
     padding-top: 1.75rem; text-align: center;
     color: rgba(255,255,255,0.25); font-size: 0.8rem;
 }
-.footer-bottom p { margin: 0; color: inherit; }
+.footer-bottom p { margin: 0 auto; max-width: none; color: inherit; }
 .footer-logo { height: 40px; width: auto; margin-bottom: 1rem; }
 
 /* ==========================================================================
