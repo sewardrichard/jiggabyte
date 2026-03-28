@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiggabyte Email Signature Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 40px; background: #f4f7fb; font-family: 'Outfit', sans-serif; color: #1a1f36; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { font-family: 'Space Grotesk', sans-serif; color: #0d1830; margin-bottom: 8px; }
+        p.subtitle { color: #4b5675; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: 350px 1fr; gap: 40px; }
+        .panel { background: #ffffff; border-radius: 20px; padding: 32px; box-shadow: 0 10px 30px rgba(13,24,48,0.06); }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; color: #0d1830; margin-top: 0; margin-bottom: 24px; }
+        
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.85rem; font-weight: 500; color: #4b5675; margin-bottom: 6px; }
+        input { 
+            width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #cbd5e1; 
+            font-family: inherit; font-size: 0.95rem; box-sizing: border-box; transition: 0.2s;
+        }
+        input:focus { border-color: #2d4f9e; outline: none; box-shadow: 0 0 0 3px rgba(45,79,158,0.1); }
+        
+        .btn {
+            background: #2d4f9e; color: #fff; border: none; padding: 16px 24px; border-radius: 8px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 600; cursor: pointer; transition: 0.2s;
+            display: inline-flex; align-items: center; justify-content: center; width: 100%; font-size: 1rem;
+            margin-top: 24px;
+        }
+        .btn:hover { background: #1a2f5e; }
+        
+        .preview-box {
+            background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 24px;
+            display: flex; align-items: center; justify-content: center; min-height: 250px;
+        }
+        .instructions { font-size: 0.9rem; color: #64748b; line-height: 1.6; padding-left: 20px; margin-top: 32px; }
+        
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Email Signature Generator</h1>
+    <p class="subtitle">Enter your details below to globally update the Jiggabyte signature code.</p>
+
+    <div class="grid">
+        <!-- Form Panel -->
+        <div class="panel">
+            <h2>Your Details</h2>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="inputName" value="Richard Seward" oninput="updatePreview()">
+            </div>
+            <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" id="inputTitle" value="Managing Director" oninput="updatePreview()">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" id="inputPhone" value="+260 570 326 775" oninput="updatePreview()">
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="inputEmail" value="info@jiggabyte.co.zm" oninput="updatePreview()">
+            </div>
+            <div class="form-group">
+                <label>Website</label>
+                <input type="text" id="inputWeb" value="www.jiggabyte.co.zm" oninput="updatePreview()" readonly>
+            </div>
+            <div class="form-group">
+                <label>Logo Image URL</label>
+                <input type="text" id="inputLogo" value="https://jiggabyte.co.zm/assets/white_logo.png" oninput="updatePreview()">
+                <small style="display:block;margin-top:4px;color:#94a3b8;font-size:0.75rem;">Must be a direct, absolute image link (starting with http/https).</small>
+            </div>
+            
+            <button class="btn" onclick="copyCode()" id="copyBtn">Copy HTML Code</button>
+        </div>
+
+        <!-- Preview Panel -->
+        <div class="panel">
+            <h2>Visual Preview</h2>
+            <div class="preview-box" id="previewContainer">
+                <!-- SIGNATURE HTML RENDERED HERE -->
+                <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+                <table cellpadding="0" cellspacing="0" border="0" width="500" style="font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; background-color: #0d1830; background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(135deg, #0d1830 0%, #1a2f5e 100%); background-size: 16px 16px, auto; background-position: 0 0, 0 0; border-radius: 20px; overflow: hidden; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.08);">
+                  <tr>
+                    <td style="padding: 32px;">
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                          <!-- Logo Box -->
+                          <td width="92" valign="middle" style="padding-right: 28px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="92" height="92" style="background-color: rgba(45,79,158,0.15); border: 1px solid rgba(45,79,158,0.3); border-radius: 16px; text-align: center;">
+                              <tr>
+                                <td valign="middle" style="padding: 16px;">
+                                  <img id="sigLogo" src="https://jiggabyte.co.zm/assets/white_logo.png" alt="Jiggabyte" width="60" style="display: block; max-width: 60px; height: auto; outline: none; border: none; text-decoration: none; margin: 0 auto;">
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <!-- Details -->
+                          <td valign="middle" style="padding-left: 28px; border-left: 1px solid rgba(255,255,255,0.1);">
+                            <div style="font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif; font-size: 10px; color: #60a5fa; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">&#9632; Jiggabyte</div>
+                            <h3 id="sigName" style="margin: 0 0 4px 0; font-size: 20px; color: #ffffff; font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif; font-weight: 700; letter-spacing: -0.3px;">Richard Seward</h3>
+                            <p id="sigTitle" style="margin: 0 0 16px 0; font-size: 12px; color: #94a3b8; font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; letter-spacing: 0.05em; font-weight: 400;">Managing Director</p>
+                            <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 13px;">
+                              <tr>
+                                <td style="padding-bottom: 6px; width: 16px; vertical-align: middle;"><img src="https://img.icons8.com/material-outlined/24/60a5fa/phone.png" width="14" height="14" alt="Phone" style="display: block; border: none;"></td>
+                                <td style="padding-bottom: 6px; padding-left: 8px; vertical-align: middle;"><a id="sigPhone" href="tel:+260570326775" style="color: rgba(255,255,255,0.85); text-decoration: none;">+260 570 326 775</a></td>
+                              </tr>
+                              <tr>
+                                <td style="padding-bottom: 6px; width: 16px; vertical-align: middle;"><img src="https://img.icons8.com/material-outlined/24/60a5fa/mail.png" width="14" height="14" alt="Email" style="display: block; border: none;"></td>
+                                <td style="padding-bottom: 6px; padding-left: 8px; vertical-align: middle;"><a id="sigEmail" href="mailto:info@jiggabyte.co.zm" style="color: rgba(255,255,255,0.85); text-decoration: none;">info@jiggabyte.co.zm</a></td>
+                              </tr>
+                              <tr>
+                                <td style="padding-bottom: 2px; width: 16px; vertical-align: middle;"><img src="https://img.icons8.com/material-outlined/24/60a5fa/globe--v2.png" width="14" height="14" alt="Website" style="display: block; border: none;"></td>
+                                <td style="padding-bottom: 2px; padding-left: 8px; vertical-align: middle;"><a id="sigWeb" href="https://www.jiggabyte.co.zm" style="color: rgba(255,255,255,0.85); text-decoration: none;">www.jiggabyte.co.zm</a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="padding-top: 24px;">
+                            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+                              <p style="margin: 0; font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 9px; line-height: 1.5; color: rgba(255,255,255,0.4); text-align: justify;">
+                                <strong>CONFIDENTIALITY NOTICE:</strong> This email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please delete all copies and notify the sender immediately. The views expressed in this message are those of the individual sender, except where the sender expressly, and with authority, states them to be the views of Jiggabyte Technology Limited.
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+            </div>
+
+            <h3 style="margin-top: 32px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: #0d1830;">How to install your signature:</h3>
+            <ul class="instructions">
+                <li>Fill out your details on the left.</li>
+                <li>Click the <strong>Copy HTML Code</strong> button.</li>
+                <li>In Outlook, Gmail, or Apple Mail, go to Signature settings.</li>
+                <li>If your email client supports pasting raw HTML code (or using a "View HTML" button/toggle), paste it directly into the code box.</li>
+                <li><strong>Important:</strong> If your email client only has a visual formatting box, simply highlight the rendered signature above with your mouse, copy it (Ctrl+C), and paste it directly into your visual signature box!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updatePreview() {
+        // Name and Title
+        document.getElementById('sigName').textContent = document.getElementById('inputName').value || 'Your Name';
+        document.getElementById('sigTitle').textContent = document.getElementById('inputTitle').value || 'Your Title';
+        
+        // Phone
+        const phone = document.getElementById('inputPhone').value;
+        const phoneEl = document.getElementById('sigPhone');
+        phoneEl.textContent = phone;
+        phoneEl.href = "tel:" + phone.replace(/[^+\d]/g, ''); // Ensure safe tel: formatting
+        
+        // Email
+        const email = document.getElementById('inputEmail').value;
+        const emailEl = document.getElementById('sigEmail');
+        emailEl.textContent = email;
+        emailEl.href = "mailto:" + email;
+        
+        // Web (usually static but bound anyway)
+        const web = document.getElementById('inputWeb').value;
+        const webEl = document.getElementById('sigWeb');
+        webEl.textContent = web;
+        webEl.href = "https://" + web;
+        
+        // Logo
+        const logoUrl = document.getElementById('inputLogo').value;
+        const logoEl = document.getElementById('sigLogo');
+        logoEl.src = logoUrl || 'https://jiggabyte.co.zm/assets/white_logo.png';
+    }
+
+    async function copyCode() {
+        // Force update just in case
+        updatePreview();
+        
+        const rawHTML = document.getElementById('previewContainer').innerHTML.trim();
+        const btn = document.getElementById('copyBtn');
+        
+        try {
+            await navigator.clipboard.writeText(rawHTML);
+            btn.innerHTML = '✓ Copied Successfully!';
+            btn.style.background = '#16a34a';
+        } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement("textarea");
+            textArea.value = rawHTML;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                btn.innerHTML = '✓ Copied Successfully!';
+                btn.style.background = '#16a34a';
+            } catch (err) {
+                btn.innerHTML = '✗ Copy Failed';
+                btn.style.background = '#dc2626';
+            }
+            document.body.removeChild(textArea);
+        }
+        
+        setTimeout(() => {
+            btn.innerHTML = 'Copy HTML Code';
+            btn.style.background = '#2d4f9e';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

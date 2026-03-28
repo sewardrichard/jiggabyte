@@ -10,56 +10,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 
 <body>
 
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
     <header class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <a href="#home" class="logo">
                 <img src="assets/logo_light.png" alt="Jiggabyte Logo" class="brand-logo logo-light">
-                <img src="assets/logo_dark.png" alt="Jiggabyte Logo" class="brand-logo logo-dark">
             </a>
-
             <nav class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
+                <a href="#home"     class="nav-link">Home</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <div class="dropdown">
-                    <span class="nav-link dropdown-toggle">More <i data-lucide="chevron-down"
-                            style="width: 16px; height: 16px;"></i></span>
+                    <span class="nav-link dropdown-toggle">More <i data-lucide="chevron-down" style="width:14px;height:14px;display:inline-block;vertical-align:middle;"></i></span>
                     <div class="dropdown-menu">
-                        <a href="#about" class="dropdown-item">About Us</a>
-                        <a href="#solutions" class="dropdown-item">Featured Solutions</a>
+                        <a href="#about"        class="dropdown-item">About Us</a>
+                        <a href="#solutions"    class="dropdown-item">AI Solutions</a>
                         <a href="#testimonials" class="dropdown-item">Testimonials</a>
-                        <a href="#why-us" class="dropdown-item">Why Us</a>
-                        <a href="#contact" class="dropdown-item">Contact</a>
+                        <a href="#why-us"       class="dropdown-item">Why Us</a>
+                        <a href="#contact"      class="dropdown-item">Contact</a>
                     </div>
                 </div>
             </nav>
-
-            <a href="#contact" class="btn btn-primary nav-btn">Book Consultation</a>
-
+            <a href="#contact" class="btn btn-primary btn-small nav-btn">Book Consultation</a>
             <button class="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
+
+        <!-- ═══════════════════════════════════════════════ HERO -->
         <section id="home" class="hero dark-section fade-in-section">
+            <div class="hero-glow"></div>
+
             <div class="container hero-grid">
                 <div class="hero-content">
+                    <div class="hero-eyebrow">Africa's Technology Future</div>
                     <h1>Innovation Through<br><span class="outline-text">Intelligent Technology</span></h1>
-                    <p>We build automation systems, AI solutions, and custom software that help African businesses work
-                        smarter, faster, and more efficiently.</p>
+                    <p>We build automation systems, AI solutions, and custom software that help African businesses work smarter, faster, and more efficiently.</p>
                     <a href="#contact" class="btn btn-primary btn-large">Book a Free Consultation</a>
                 </div>
+
                 <div class="hero-visual">
                     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.68/build/spline-viewer.js"></script>
                     <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/daVVhLBp3wRXVCno/scene.splinecode"></spline-viewer>
@@ -67,196 +69,211 @@
             </div>
         </section>
 
-        <section id="about" class="bg-alt fade-in-section">
+        <!-- ═══════════════════════════════════════════════ ABOUT -->
+        <section id="about" class="section-light fade-in-section">
             <div class="container">
                 <div class="two-col-layout">
-                    <div class="about-text">
-                        <h2 class="section-title">Who We Are</h2>
-                        <p>Jiggabyte Technology Limited is a forward-thinking technology company building the next
-                            generation of AI solutions, automation systems, intelligent assistants, custom software, and
-                            modern websites. We pride ourselves on delivering innovation, intelligence, precision, and
-                            reliability.</p>
-                        <p>Our mission is to lead modern African technology by building structured, intelligent modules
-                            that solve real-world problems. We envision a future where local businesses operate with
-                            global efficiency.</p>
+                    <div class="about-left">
+                        <span class="section-tag">Who We Are</span>
+                        <h2 class="section-title">Built for the<br>African Enterprise</h2>
+                        <p>Jiggabyte Technology Limited is a forward-thinking technology company building the next generation of AI solutions, automation systems, intelligent assistants, custom software, and modern websites.</p>
+                        <p>Our mission is to lead modern African technology by building structured, intelligent modules that solve real-world problems — enabling local businesses to operate with global efficiency.</p>
                     </div>
-
                     <div class="values-grid">
-                        <div class="card value-card">
+                        <div class="card value-card fade-in-section stagger-1">
                             <i data-lucide="zap" class="lucide-icon text-accent"></i>
-                            <div class="value-content">
-                                <h3>Innovation</h3>
-                                <p>Pushing technological boundaries.</p>
-                            </div>
+                            <div class="value-content"><h3>Innovation</h3><p>Pushing technological boundaries.</p></div>
                         </div>
-                        <div class="card value-card">
+                        <div class="card value-card fade-in-section stagger-2">
                             <i data-lucide="shield-check" class="lucide-icon text-accent"></i>
-                            <div class="value-content">
-                                <h3>Integrity</h3>
-                                <p>Honest, transparent systems.</p>
-                            </div>
+                            <div class="value-content"><h3>Integrity</h3><p>Honest, transparent systems.</p></div>
                         </div>
-                        <div class="card value-card">
+                        <div class="card value-card fade-in-section stagger-3">
                             <i data-lucide="award" class="lucide-icon text-accent"></i>
-                            <div class="value-content">
-                                <h3>Excellence</h3>
-                                <p>Precision in every module.</p>
-                            </div>
+                            <div class="value-content"><h3>Excellence</h3><p>Precision in every module.</p></div>
                         </div>
-                        <div class="card value-card">
+                        <div class="card value-card fade-in-section stagger-4">
                             <i data-lucide="users" class="lucide-icon text-accent"></i>
-                            <div class="value-content">
-                                <h3>Customer Focus</h3>
-                                <p>Solutions tailored to you.</p>
-                            </div>
+                            <div class="value-content"><h3>Customer Focus</h3><p>Solutions tailored to you.</p></div>
                         </div>
-                        <div class="card value-card">
+                        <div class="card value-card fade-in-section stagger-5">
                             <i data-lucide="briefcase" class="lucide-icon text-accent"></i>
-                            <div class="value-content">
-                                <h3>Collaboration</h3>
-                                <p>Building success together.</p>
-                            </div>
+                            <div class="value-content"><h3>Collaboration</h3><p>Building success together.</p></div>
+                        </div>
+                        <div class="card value-card fade-in-section stagger-2">
+                            <i data-lucide="activity" class="lucide-icon text-accent"></i>
+                            <div class="value-content"><h3>Reliability</h3><p>Dependable, always-on systems.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="dark-section fade-in-section">
+        <!-- ═══════════════════════════════════════════════ SERVICES -->
+        <section id="services" class="fade-in-section">
             <div class="container">
-                <h2 class="section-title text-center">Building the Future of Automation and Digital Intelligence</h2>
-
+                <div class="section-header text-center">
+                    <span class="section-tag">What We Do</span>
+                    <h2>Building the Future of<br>Automation &amp; Digital Intelligence</h2>
+                </div>
                 <div class="services-grid">
-                    <div class="card service-card square-card">
-                        <i data-lucide="settings" class="lucide-icon text-primary mb-3"></i>
-                        <h3>Automation Design & Development</h3>
+                    <div class="card service-card square-card fade-in-section stagger-1">
+                        <i data-lucide="settings" class="lucide-icon text-accent mb-3"></i>
+                        <h3>Automation Design &amp; Development</h3>
                         <p>Streamline your operations with robust, scalable automation systems built for precision.</p>
                     </div>
-                    <div class="card service-card square-card">
-                        <i data-lucide="brain" class="lucide-icon text-primary mb-3"></i>
+                    <div class="card service-card square-card fade-in-section stagger-2">
+                        <i data-lucide="brain" class="lucide-icon text-accent mb-3"></i>
                         <h3>AI Solutions</h3>
-                        <p>Integrate structured intelligence into your workflow to make data-driven decisions faster.
-                        </p>
+                        <p>Integrate structured intelligence into your workflow to make data-driven decisions faster.</p>
                     </div>
-                    <div class="card service-card square-card">
-                        <i data-lucide="monitor-smartphone" class="lucide-icon text-primary mb-3"></i>
+                    <div class="card service-card square-card fade-in-section stagger-3">
+                        <i data-lucide="monitor-smartphone" class="lucide-icon text-accent mb-3"></i>
                         <h3>IT Consultancy</h3>
                         <p>Expert guidance on system architecture and digital transformation strategies.</p>
                     </div>
-                    <div class="card service-card square-card">
-                        <i data-lucide="layout" class="lucide-icon text-primary mb-3"></i>
+                    <div class="card service-card square-card fade-in-section stagger-4">
+                        <i data-lucide="layout" class="lucide-icon text-accent mb-3"></i>
                         <h3>Web Development</h3>
                         <p>Modern, high-performance websites built with clean code and structured layouts.</p>
                     </div>
-                    <div class="card service-card square-card">
-                        <i data-lucide="code" class="lucide-icon text-primary mb-3"></i>
+                    <div class="card service-card square-card fade-in-section stagger-5">
+                        <i data-lucide="code" class="lucide-icon text-accent mb-3"></i>
                         <h3>Software Development</h3>
                         <p>Custom software engineered as intelligent modules tailored to your business needs.</p>
+                    </div>
+                    <div class="card service-card square-card fade-in-section stagger-2">
+                        <i data-lucide="bar-chart-3" class="lucide-icon text-accent mb-3"></i>
+                        <h3>Data Analytics</h3>
+                        <p>Transform raw business data into structured, actionable intelligence.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="solutions" class="bg-alt fade-in-section">
+        <!-- ═══════════════════════════════════════════════ STATS STRIP -->
+        <div class="stats-strip fade-in-section">
+            <div class="container">
+                <div class="stats-strip-grid">
+                    <div class="stats-strip-item fade-in-section stagger-1">
+                        <span class="stats-strip-number" data-target="75" data-suffix="%">75%</span>
+                        <span class="stats-strip-label">Reduction in audit cycle times</span>
+                    </div>
+                    <div class="stats-strip-item fade-in-section stagger-2">
+                        <span class="stats-strip-number" data-target="24" data-suffix="/7">24/7</span>
+                        <span class="stats-strip-label">Always-on AI assistants</span>
+                    </div>
+                    <div class="stats-strip-item fade-in-section stagger-3">
+                        <span class="stats-strip-number" data-target="50" data-suffix="+">50+</span>
+                        <span class="stats-strip-label">Hours saved per week</span>
+                    </div>
+                    <div class="stats-strip-item fade-in-section stagger-4">
+                        <span class="stats-strip-number" data-target="100" data-suffix="%">100%</span>
+                        <span class="stats-strip-label">Client satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════ AI SOLUTIONS -->
+        <section id="solutions" class="fade-in-section section-glow glow-left">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">AI-Powered Assistants</h2>
-                    <p class="subtitle">Intelligent Assistants, Built for Any Industry</p>
-                    <p class="intro-text">Our custom AI agents are engineered to integrate seamlessly into your existing
-                        infrastructure, acting as the intelligent front-line for your operations.</p>
+                    <span class="section-tag">Featured Solutions</span>
+                    <h2>AI-Powered Assistants</h2>
+                    <p class="subtitle">Intelligent agents built for any industry.</p>
+                    <p class="intro-text">Our custom AI assistants integrate seamlessly into your existing infrastructure, acting as the intelligent front-line for your operations.</p>
                 </div>
-
                 <div class="features-grid">
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-1">
                         <i data-lucide="message-square" class="lucide-icon text-primary mt-1"></i>
                         <p>Handle high volumes of inquiries instantly</p>
                     </div>
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-2">
                         <i data-lucide="map" class="lucide-icon text-primary mt-1"></i>
                         <p>Guide customers through products and bookings</p>
                     </div>
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-3">
                         <i data-lucide="file-text" class="lucide-icon text-primary mt-1"></i>
                         <p>Support employees with HR processes</p>
                     </div>
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-4">
                         <i data-lucide="book-open" class="lucide-icon text-primary mt-1"></i>
                         <p>Assist students with academic queries</p>
                     </div>
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-5">
                         <i data-lucide="phone-forwarded" class="lucide-icon text-primary mt-1"></i>
                         <p>Escalate complex cases to human agents</p>
                     </div>
-                    <div class="feature-block card">
+                    <div class="feature-block fade-in-section stagger-2">
                         <i data-lucide="plug" class="lucide-icon text-primary mt-1"></i>
-                        <p>Integrate with existing systems</p>
+                        <p>Integrate with your existing systems</p>
                     </div>
                 </div>
-
                 <div class="text-center mt-xl">
                     <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="dark-section bg-alt fade-in-section">
+        <!-- ═══════════════════════════════════════════════ PROJECTS -->
+        <section id="projects" class="fade-in-section">
             <div class="container">
                 <div class="section-header text-center mb-xl">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <span class="section-tag">Our Work</span>
+                    <h2>Featured Projects</h2>
                     <p class="subtitle">Real-world intelligence and automation deployed for our partners.</p>
                 </div>
-
                 <div class="projects-grid">
-                    <div class="project-card glass-card" data-project="mfz-chatbot">
+                    <div class="glass-card project-card fade-in-section stagger-1" data-project="mfz-chatbot">
                         <div class="project-image">
                             <img src="assets/images/mfz-ai-chatbot.png" alt="MFZ AI Chatbot">
                         </div>
                         <div class="project-content">
                             <h3>MFZ AI Chatbot</h3>
-                            <p>24/7 WhatsApp & webchat assistant with automated lead routing and RAG-powered support for MFZ Zambia.</p>
-                            <button class="btn btn-small btn-outline project-details-btn">View Details</button>
+                            <p>24/7 WhatsApp &amp; webchat assistant with automated lead routing and RAG-powered support for MFZ Zambia.</p>
+                            <a href="project-mfz.html" class="btn btn-small btn-outline">View Details</a>
                         </div>
                     </div>
-
-                    <div class="project-card glass-card" data-project="auditflow">
+                    <div class="glass-card project-card fade-in-section stagger-2" data-project="auditflow">
                         <div class="project-image">
                             <img src="assets/images/auditflow-suite.jpg" alt="AuditFlow Toolkit">
                         </div>
                         <div class="project-content">
                             <h3>AuditFlow Toolkit</h3>
                             <p>8-tool suite automating UIF COVID TERS audits, cutting cycle times by 75% and saving 50+ hours weekly.</p>
-                            <button class="btn btn-small btn-outline project-details-btn">View Details</button>
+                            <a href="project-auditflow.html" class="btn btn-small btn-outline">View Details</a>
                         </div>
                     </div>
+                </div>
+                <div class="text-center mt-xl">
+                    <a href="projects.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.2); color: #fff;">View All Projects</a>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="fade-in-section">
+        <!-- ═══════════════════════════════════════════════ TESTIMONIALS -->
+        <section id="testimonials" class="fade-in-section section-glow glow-center">
             <div class="container">
                 <div class="section-header text-center mb-xl">
-                    <h2 class="section-title">Client Success</h2>
-                    <p class="subtitle">What our partners say about us</p>
+                    <span class="section-tag">Client Voices</span>
+                    <h2>What Our Partners Say</h2>
                 </div>
-
                 <div class="testimonials-grid">
-                    <div class="testimonial-card glass-card">
-                        <p class="testimonial-text">"Our UIF COVID TERS audits used to eat up days of manual work chasing documents, compiling reports, tracking emails by hand. AuditFlow cut through all of that. We're getting through work in a fraction of the time and I'm not constantly worrying about compliance gaps anymore. It's made a real difference for my team."</p>
+                    <div class="glass-card testimonial-card fade-in-section stagger-1">
+                        <p class="testimonial-text">"Our UIF COVID TERS audits used to eat up days of manual work. AuditFlow cut through all of that. We're getting through work in a fraction of the time and I'm not constantly worrying about compliance gaps anymore. It's made a real difference for my team."</p>
                         <div class="testimonial-author">
-                            <img src="assets/images/audit-avatar.png" alt="Mmatsiana Makgoba"
-                                class="author-avatar">
+                            <img src="assets/images/audit-avatar.png" alt="Mmatsiana Makgoba" class="author-avatar">
                             <div>
                                 <h4>Mmatsiana Makgoba</h4>
                                 <span>Project Manager</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-card glass-card">
-                        <p class="testimonial-text">"We used to have one person handling every WhatsApp inquiry that came into head office - leads, questions, branch requests, all of it. After hours, customers just got nothing. The chatbot handles all of that now. It picks up every message, gets customers to the right branch, and passes qualified leads straight to the right loan officer. We stopped losing people just because nobody was available to respond."</p>
+                    <div class="glass-card testimonial-card fade-in-section stagger-2">
+                        <p class="testimonial-text">"We used to have one person handling every WhatsApp inquiry — leads, questions, branch requests, all of it. After hours, customers just got nothing. The chatbot handles all of that now. It picks up every message and passes qualified leads straight to the right loan officer."</p>
                         <div class="testimonial-author">
-                            <img src="assets/images/mfz-logo.png" alt="Joshua Zulu"
-                                class="author-avatar">
+                            <img src="assets/images/mfz-logo.png" alt="Joshua Zulu" class="author-avatar">
                             <div>
                                 <h4>Joshua Zulu</h4>
                                 <span>MFZ Staff</span>
@@ -267,263 +284,159 @@
             </div>
         </section>
 
-        <section id="why-us" class="fade-in-section">
+        <!-- ═══════════════════════════════════════════════ WHY US -->
+        <section id="why-us" class="section-light fade-in-section">
             <div class="container">
-                <div class="two-col-layout">
-                    <div class="why-text">
-                        <h2 class="section-title">Locally Rooted. Globally Capable.</h2>
-                        <p>We combine deep local market context with world-class engineering standards. When you choose
-                            Jiggabyte, you are investing in reliable, modular technology that scales with your ambition.
-                        </p>
+                <div class="why-us-grid">
+                    <!-- Bento image card -->
+                    <div class="why-us-image-card fade-in-section stagger-1">
+                        <img src="assets/images/why-us-consulting.png" alt="Jiggabyte professional strategy meeting">
                     </div>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <i data-lucide="map-pin" class="lucide-icon text-accent"></i>
-                            <h4>Deep Local Understanding</h4>
-                        </div>
-                        <div class="benefit-item">
-                            <i data-lucide="cpu" class="lucide-icon text-accent"></i>
-                            <h4>Proven AI & Automation Expertise</h4>
-                        </div>
-                        <div class="benefit-item">
-                            <i data-lucide="heart" class="lucide-icon text-accent"></i>
-                            <h4>A Client-First Approach</h4>
-                        </div>
-                        <div class="benefit-item">
-                            <i data-lucide="target" class="lucide-icon text-accent"></i>
-                            <h4>Committed to Measurable Impact</h4>
-                        </div>
-                        <div class="benefit-item">
-                            <i data-lucide="headphones" class="lucide-icon text-accent"></i>
-                            <h4>Support Beyond Delivery</h4>
+                    <!-- Content -->
+                    <div class="why-us-content">
+                        <span class="section-tag">Why Jiggabyte</span>
+                        <h2>Locally Rooted.<br>Globally Capable.</h2>
+                        <p>We combine deep local market context with world-class engineering standards. Investing in Jiggabyte means reliable, modular technology that scales with your ambition.</p>
+                        <div class="benefits-list">
+                            <div class="benefit-item fade-in-section stagger-2">
+                                <i data-lucide="map-pin" class="lucide-icon text-accent"></i>
+                                <h4>Deep Local Understanding</h4>
+                            </div>
+                            <div class="benefit-item fade-in-section stagger-3">
+                                <i data-lucide="cpu" class="lucide-icon text-accent"></i>
+                                <h4>Proven AI &amp; Automation Expertise</h4>
+                            </div>
+                            <div class="benefit-item fade-in-section stagger-4">
+                                <i data-lucide="heart" class="lucide-icon text-accent"></i>
+                                <h4>A Client-First Approach</h4>
+                            </div>
+                            <div class="benefit-item fade-in-section stagger-5">
+                                <i data-lucide="target" class="lucide-icon text-accent"></i>
+                                <h4>Committed to Measurable Impact</h4>
+                            </div>
+                            <div class="benefit-item fade-in-section stagger-2">
+                                <i data-lucide="headphones" class="lucide-icon text-accent"></i>
+                                <h4>Support Beyond Delivery</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section bg-alt fade-in-section">
+        <!-- ═══════════════════════════════════════════════ CTA -->
+        <section class="cta-section dark-section fade-in-section section-glow glow-center">
             <div class="cta-grid-pattern"></div>
             <div class="container cta-content text-center">
-                <h2>Let's Build Something Remarkable Together</h2>
-                <a href="#contact" class="btn btn-accent btn-large mt-l">Book Your Free Consultation</a>
+                <span class="section-tag">Get Started</span>
+                <h2>Let's Build Something<br>Remarkable Together</h2>
+                <a href="#contact" class="btn btn-primary btn-large mt-l">Book Your Free Consultation</a>
             </div>
         </section>
 
-        <section id="contact" class="dark-section fade-in-section contact-bg">
+        <!-- ═══════════════════════════════════════════════ CONTACT -->
+        <section id="contact" class="dark-section fade-in-section">
+            <div class="hero-glow" style="top:20%;left:65%;right:auto;width:40vw;height:40vw;"></div>
             <div class="container">
                 <div class="contact-layout">
                     <div class="contact-details">
-                        <h2 class="section-title">Get In Touch</h2>
-                        <p class="mb-l">Ready to modularize and intelligentize your business? Reach out to us today.</p>
-
+                        <span class="section-tag">Get In Touch</span>
+                        <h2>Ready to Intelligentize<br>Your Business?</h2>
+                        <p class="mb-l">Reach out and let's start building something remarkable.</p>
                         <div class="contact-info-list">
-                            <div class="contact-item">
+                            <div class="contact-item fade-in-section stagger-1">
                                 <span class="contact-label">Email</span>
                                 <a href="mailto:info@jiggabyte.co.zm">info@jiggabyte.co.zm</a>
                             </div>
-                            <div class="contact-item">
+                            <div class="contact-item fade-in-section stagger-2">
                                 <span class="contact-label">Website</span>
                                 <a href="http://www.jiggabyte.co.zm" target="_blank">www.jiggabyte.co.zm</a>
                             </div>
-                            <div class="contact-item">
+                            <div class="contact-item fade-in-section stagger-3">
                                 <span class="contact-label">Phone</span>
                                 <a href="tel:+260570326775">+260 570 326 775</a>
                             </div>
-                            <div class="contact-item">
+                            <div class="contact-item fade-in-section stagger-4">
                                 <span class="contact-label">Address</span>
                                 <address>2337/M Off Leopards Hill Road,<br>New Kasama, Lusaka</address>
                             </div>
                         </div>
                     </div>
-
-                    <div class="contact-form-container glass-card">
+                    <div class="contact-form-container glass-card fade-in-section stagger-2">
                         <form id="contactForm" class="contact-form">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required class="form-control">
+                                <input type="text" id="name" name="name" required class="form-control" placeholder="Your full name">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required class="form-control">
+                                <input type="email" id="email" name="email" required class="form-control" placeholder="you@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service of Interest</label>
+                                <select id="service" name="service" required class="form-control">
+                                    <option value="General Enquiry">General Enquiry</option>
+                                    <option value="Automation Design & Development">Automation Design & Development</option>
+                                    <option value="AI Solutions">AI Solutions</option>
+                                    <option value="IT Consultancy">IT Consultancy</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Software Development">Software Development</option>
+                                    <option value="Data Analytics">Data Analytics</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required class="form-control"></textarea>
+                                <textarea id="message" name="message" rows="5" required class="form-control" placeholder="Tell us about your project..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- Project Detail Modals -->
-    <div id="project-modal" class="project-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <button class="modal-close" aria-label="Close modal">
-                <i data-lucide="x" style="width: 24px; height: 24px;"></i>
-            </button>
-            
-            <!-- MFZ Chatbot Content -->
-            <div class="modal-content" id="mfz-chatbot-content" style="display: none;">
-                <div class="modal-header">
-                    <span class="modal-tag">AI Chatbot</span>
-                    <h2>MFZ AI Chatbot: Automated Lead Routing & Support System</h2>
-                    <p class="modal-subtitle">24/7 intelligent WhatsApp & webchat assistant built on Botpress that automates lead qualification, geographic branch routing, and fair loan officer assignment while answering customer queries from a verified RAG knowledge base.</p>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/mfz-ai-chatbot.png" alt="MFZ AI Chatbot" class="modal-image">
-                    
-                    <div class="modal-section">
-                        <h3>Overview</h3>
-                        <p>Replaced MFZ Zambia's manual head-office WhatsApp operator with an automated, always-on system that can qualify leads, provide accurate answers from verified MFZ policies, and route customers to the right branch or loan officer without human bottlenecks.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Development Approach</h3>
-                        <ul class="arrow-list">
-                            <li>Designed the conversation and decision flows in Botpress to capture user intent, collect key lead information, and guide customers through province and branch selection.</li>
-                            <li>Implemented a Retrieval-Augmented Generation (RAG) layer using a curated MFZ knowledge base so the bot only answers from verified internal policies and documentation.</li>
-                            <li>Modeled provinces, branches, loan officers, and assignment counters in Botpress Tables to support geographic routing and stateful distribution.</li>
-                            <li>Built a fair load-balancing algorithm that assigns new loan leads to the officer at the selected branch with the lowest current assignment count (round-robin style).</li>
-                            <li>Configured WhatsApp Cloud API and webchat channels so the bot can operate seamlessly on both mobile and web entry points.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Challenges & Solutions</h3>
-                        <div class="challenge-solution">
-                            <p class="challenge"><strong>Challenge:</strong> Ensuring the bot stayed compliant and did not share sensitive financial terms like interest rates or repayment amounts.</p>
-                            <p class="solution"><strong>Solution:</strong> Constrained the bot's responses to a verified MFZ knowledge base and explicitly restricted it from answering detailed pricing questions, instead handing off those topics to the assigned human loan officer.</p>
-                        </div>
-                        <div class="challenge-solution">
-                            <p class="challenge"><strong>Challenge:</strong> Distributing leads fairly across many loan officers while respecting geography and avoiding overload.</p>
-                            <p class="solution"><strong>Solution:</strong> Implemented a stateful assignment counter per officer in Botpress Tables and built logic to always route new leads to the officer with the lowest current assignment at the selected branch.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Outcomes</h3>
-                        <ul class="arrow-list">
-                            <li>Eliminated the single-operator bottleneck at MFZ head office by automating lead capture, qualification, and routing.</li>
-                            <li>Captured every after-hours lead via 24/7 availability, reducing the risk of losing customers to competitors due to delayed responses.</li>
-                            <li>Provided standardized, accurate responses for all customers based on MFZ's verified policies and service descriptions.</li>
-                            <li>Gave management better visibility into traffic, product interest, and branch/loan officer load patterns via chatbot interaction data.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- AuditFlow Content -->
-            <div class="modal-content" id="auditflow-content" style="display: none;">
-                <div class="modal-header">
-                    <span class="modal-tag">Audit Automation</span>
-                    <h2>AuditFlow - Complete Audit Toolkit Suite</h2>
-                    <p class="modal-subtitle">A comprehensive suite of 8 specialized tools to streamline and automate end-to-end UIF COVID TERS audit workflows, cutting cycle times by up to 75%.</p>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/auditflow-suite.jpg" alt="AuditFlow Toolkit" class="modal-image">
-                    
-                    <div class="modal-section">
-                        <h3>Overview</h3>
-                        <p>Existing audit workflows, particularly for UIF COVID TERS, were slow, manually intensive, and error-prone. The suite was built to eliminate manual bottlenecks, improve reliability, and ensure full regulatory compliance for complex audit processes.</p>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Development Approach</h3>
-                        <ul class="arrow-list">
-                            <li>Developed 8 specialized tools to cover all aspects of the audit workflow, including communication (Email/Calls tracking), documentation (Working Papers/Reports), and analytics.</li>
-                            <li>Utilized Python and Streamlit to build robust data processing pipelines and interactive UI/dashboards, such as the Audit Report Generator.</li>
-                            <li>Implemented automated processes for data consolidation (Weekly Register Populator) and file handling (File Finder & Copier).</li>
-                            <li>Integrated IMAP sync and SQLite metrics for real-time tracking of email volumes and performance.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Challenges & Solutions</h3>
-                        <div class="challenge-solution">
-                            <p class="challenge"><strong>Challenge:</strong> Integrating multiple distinct audit steps into a seamless workflow.</p>
-                            <p class="solution"><strong>Solution:</strong> Designed an integrated suite of 8 tools (Working Paper Generator, Email Tracker, etc.) that work together for complete workflow coverage.</p>
-                        </div>
-                        <div class="challenge-solution">
-                            <p class="challenge"><strong>Challenge:</strong> Achieving high-speed processing for complex, multi-source audit data.</p>
-                            <p class="solution"><strong>Solution:</strong> Built tools to process workflows 10x faster and reduce audit cycle times by using efficient, automated methods.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-section">
-                        <h3>Outcomes</h3>
-                        <ul class="arrow-list">
-                            <li>Reduced audit cycle times and manual effort by up to 75%.</li>
-                            <li>Achieved an estimated saving of 50+ hours per week for audit teams.</li>
-                            <li>Improved report quality and ensured 100% compliance with built-in checks and audit trails.</li>
-                        </ul>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number">75%</span>
-                                <span class="stat-label">Reduction in audit cycle time</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">99%</span>
-                                <span class="stat-label">Accuracy rate</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-label">Hours saved per week</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <footer style="padding: 4rem 0 2rem; background: var(--primary);">
-        <div class="container footer-content"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-            <!-- Column 1: Logo and Tagline -->
-            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: flex-start;">
-                <img src="assets/logo_light.png" alt="Jiggabyte Logo" class="brand-logo mb-3">
-                <p style="color: rgba(255, 255, 255, 0.8);">Empowering Innovation Through<br>Intelligent Technology</p>
+    <!-- ═══════════════════════════════════════════════ FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo_light.png" alt="Jiggabyte Logo" class="footer-logo">
+                <p>Empowering Innovation Through<br>Intelligent Technology</p>
             </div>
-
-            <!-- Column 2: Vertical Menu -->
-            <div class="footer-links" style="display: flex; flex-direction: column; gap: 1rem;">
-                <h4 style="color: var(--white); margin-bottom: 0.5rem;">Quick Links</h4>
-                <a href="#home" style="color: rgba(255, 255, 255, 0.8);">Home</a>
-                <a href="#about" style="color: rgba(255, 255, 255, 0.8);">About</a>
-                <a href="#services" style="color: rgba(255, 255, 255, 0.8);">Services</a>
-                <a href="#contact" style="color: rgba(255, 255, 255, 0.8);">Contact</a>
+            <div class="footer-services">
+                <h4>Services</h4>
+                <a href="#services">AI Solutions</a>
+                <a href="#services">Process Automation</a>
+                <a href="#services">Software Development</a>
+                <a href="#services">IT Consultancy</a>
             </div>
-
-            <!-- Column 3: Contact Details -->
-            <div class="footer-contact" style="display: flex; flex-direction: column; gap: 1rem;">
-                <h4 style="color: var(--white); margin-bottom: 0.5rem;">Contact Us</h4>
-                <div
-                    style="color: rgba(255, 255, 255, 0.8); display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
-                    <a href="mailto:info@jiggabyte.co.zm" style="color: inherit;">info@jiggabyte.co.zm</a>
-                    <a href="tel:+260570326775" style="color: inherit;">+260 570 326 775</a>
-                    <address style="font-style: normal; line-height: 1.5; color: inherit;">
-                        2337/M Off Leopards Hill Road,<br>
-                        New Kasama, Lusaka, Zambia
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div>
+                    <a href="mailto:info@jiggabyte.co.zm">info@jiggabyte.co.zm</a>
+                    <a href="tel:+260570326775">+260 570 326 775</a>
+                    <address style="font-style:normal;line-height:1.6;">
+                        2337/M Off Leopards Hill Road,<br>New Kasama, Lusaka, Zambia
                     </address>
                 </div>
             </div>
         </div>
-
-        <div class="footer-bottom" style="margin-top: 3rem;">
-            <div class="container text-center"
-                style="color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; padding-top: 1.5rem;">
-                <p style="margin: 0 auto; max-width: none;">&copy; 2026 Jiggabyte Technology Limited. All rights
-                    reserved.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Jiggabyte Technology Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
